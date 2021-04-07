@@ -1,18 +1,22 @@
+# Importing required classes from different files
 from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
+# Creating instance of the objects
 coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 menu = Menu()
 
+# Variable to check if the coffee machine is on
 is_on = True
 
+
 while is_on:
-    choice = input(f"Welcome to Cassa Coffee Roasters! What would you like to  have ? :  {menu.get_items()}")
-    if choice == 'off':
+    choice = input(f"Welcome to Cassa Coffee Roasters! \n{menu.get_items()} \nWhat would you like to  have ? :")
+    if choice == 'off': # to switch off the machine
         is_on = False
-    elif choice == 'report':
+    elif choice == 'report': # to check the wallet and resources
         coffee_maker.report()
         money_machine.report()
     else:
